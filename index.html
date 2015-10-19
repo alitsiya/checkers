@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <div class="chessboard">
+                </div>
+            </div>
+            <div class="col-2">
+                <div>Let's play some Checkers!</div>
+                <div>Gamer 1 White: </div>
+                <div>Gamer 2 Black: </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+    $('.chessboard').html('<img src="white.png" alt="" id="w1"><img src="white.png" alt="" id="w2"><img src="white.png" alt="" id="w3"><img src="white.png" alt="" id="w4"><img src="white.png" alt="" id="w5"><img src="black.png" alt="" id="b1"><img src="black.png" alt="" id="b2"><img src="black.png" alt="" id="b3"><img src="black.png" alt="" id="b4"><img src="black.png" alt="" id="b5">')
+/*initial setting of the Board */
+    var board = [{
+        name: 'img#w1',top: 0,left: 0}, 
+        {
+        name: 'img#w2',top: 0,left: 200
+    }, {
+        name: 'img#w3',top: 0,left: 400
+    }, {
+        name: 'img#w4',top: 100,left: 100
+    }, {
+        name: 'img#w5',top: 100,left: 300
+    }, {
+        name: 'img#b1',top: 400,left: 100
+    }, {
+        name: 'img#b2',top: 400,left: 300
+    }, {
+        name: 'img#b3',top: 300,left: 0
+    }, {
+        name: 'img#b4',top: 300,left: 200
+    }, {
+        name: 'img#b5',top: 300,left: 400
+    }] 
+
+    for (var i=0; i < board.length; i++) {
+    	$(board[i].name).css({top: board[i].top, left: board[i].left});
+    }
+    console.log("Board length " + board.length)
+
+
+    /*        var imgright = window.innerWidth - event.pageX - 250;
+    var imgtop = event.pageY;
+    $('img').css({position: 'absolute', top: imgtop, right: imgright}) */
+    var click_on_board = function() {
+        console.log(event.pageX, event.pageY, !!event.which)
+        $('img#w1').css({
+            top: Math.floor(event.pageY/100)*100,
+            left: Math.floor(event.pageX/100)*100
+        })
+    }
+
+    document.querySelector('.chessboard').addEventListener('click', click_on_board)
+    </script>
+</body>
+
+</html>
