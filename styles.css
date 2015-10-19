@@ -23,8 +23,8 @@ position: absolute;
 
 .col-1 {
     float: left;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 }
 
 .col-2 {
@@ -35,10 +35,8 @@ position: absolute;
 }
 
 .chessboard {
-    background-image: url("chessboard.png");
-    background-color: white;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     float: left;
 }
 .ceilrow {
@@ -48,13 +46,11 @@ position: absolute;
     position: relative;
 }
 .ceil_white{
-	/* background-image: url("white.gif"); */
 	width: 20%;
 	height: 100%;
 	float: left;
 }
 .ceil_black{
-	/* background-image: url("black.png"); */
 	width: 20%;
 	height: 100%;
 	float: left;
